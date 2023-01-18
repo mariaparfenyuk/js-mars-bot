@@ -1,0 +1,16 @@
+{
+  "name": "js-mars-bot",
+  "version": "1.0.0",
+  "description": "bot for telegram with photos from different Mar's rovers",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "Mariia Parfeniuk",
+  "license": "ISC",
+  "dependencies": {
+    "covid19-api": "^1.2.1",
+    "qs": "^6.10.2",
+    "telegraf": "^4.5.2"
+  }
+}

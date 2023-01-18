@@ -1,0 +1,26 @@
+{
+  "rovers": [ "/curiosity", "/opportunity", "/spirit"],
+  "curiosityCameras": ["/FHAZ", "/RHAZ", "/MAST", "/CHEMCAM", "/MAHLI", "/MARDI", "/NAVCAM", "/PANCAM", "/MINITES"],
+  "opportunityCameras": ["/FHAZ", "/RHAZ", "/NAVCAM", "/PANCAM", "/MINITES"],
+  "spiritCameras": ["/FHAZ", "/RHAZ", "/NAVCAM"],
+  "errorMessages": {
+    "noPhotoForThisDate": "Нет фотографий для выбранного марсохода и за указанную дату. Для получения списка марсходов используй команду /help",
+    "dateMessage": "Введи дату в формате \"год-месяц-день\". ",
+    "voiceError": "Я не понимаю голосовые сообщения. Пожалуйста, выберите марсоход, камеру и дату в земном формате. Для получения списка марсходов используй команду /help",
+    "stickerError": "Я не понимаю стикеры. Пожалуйста, выбери марсоход, камеру и дату в земном формате. Для получения списка марсходов используй команду /help",
+    "photoError": "Я не понимаю это фото. Пожалуйста, выбери марсоход, камеру и дату в земном формате. Для получения списка марсходов используй команду /help",
+    "noCamera": "Такой камеры у данного марсохода нет. Для получения списка марсоходов используйте команду /help",
+    "documentError": "Я не понимаю это. Пожалуйста, выбери марсоход, камеру и дату в земном формате. Для получения списка марсходов используй команду /help",
+    "timeOfWorkRovers": "Масрход Curiosity прибыл на Марс 6 августа 2012 года. Марсоход Opportunity прибыл на Марс 25 января 2004 года. Сигнал от него потерян 10 июня 2018 года. Марсоход Spirit прибыл на Марс прибыл на Марс 4 января 2004. Сигнал от него потерян 22 марта 2010 года.",
+    "timeOfWorkCuriosity": "Для марсохода Curiosity временной промежуток: 2012-08-06 - настоящее время",
+    "timeOfWorkOpportunity": "Для марсохода Opportunity временной промежуток: 2004-01-25 - 2018-06-10.",
+    "timeOfWorkSpirit": "Для марсохода Spirit временной промежуток: 2004-01-04 - 2010-03-22",
+    "camerasNames": "FHAZ - Front Hazard Avoidance Camera, RHAZ - Rear Hazard Avoidance Camera, MAST - Mast Camera, CHEMCAM - Chemistry and Camera Complex, MAHLI - Mars Hand Lens Imager, MARDI - Mars Descent Imager, NAVCAM - Navigation Camera, PANCAM - Panoramic Camera, MINITES - Miniature Thermal Emission Spectrometer (Mini-TES)",
+    "newPhoto": "Для получения нового фото выбери команду /start",
+    "noPhotoForThisDateStart": "Нет фотографий за данную дату. Для получения нового фото выбери команду /start"
+  },
+  "dialog": {
+    "selectCamera": "Выбери камеру из списка: ",
+    "decodingOfCameraNames": "Расшифровка названия камер: "
+  }
+}
