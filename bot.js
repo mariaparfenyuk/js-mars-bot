@@ -19,57 +19,59 @@ let spiritCamerasList = constants.spiritCameras.join(' ');
 let selectCamera = constants.dialog.selectCamera;
 let dateMessage = constants.errorMessages.dateMessage;
 let noCameraMessage = constants.errorMessages.noCamera;
+let opportunity = constants.rovers[1];
+let curiosity = constants.rovers[0];
+let spirit = constants.rovers[2];
+let FHAZ = constants.curiosityCameras[0];
 
-bot.start( ctx => ctx.reply(`
-    Привет ${ctx.from.first_name}!
-    Хочешь увидеть снимки Марса? Выбери марсоход ${roversList} и дату в земном времени. 
-    `))
+bot.start( ctx => ctx.reply(
+    constants.dialog.hello + ctx.from.first_name + '!' +
+    constants.dialog.greeting + roversList));
 
-bot.help( ctx => ctx.reply(`
-    ${ctx.from.first_name}, пожалуйста, выбери марсоход из списка ${roversList} и дату в земном времени. 
-    ${timeOfWorkList}.` +
-    constants.dialog.decodingOfCameraNames + camerasNamesList
-    ))
+bot.help( ctx => ctx.reply(
+    ctx.from.first_name + ' , ' + constants.dialog.selectRover + roversList + 
+    timeOfWorkList + constants.dialog.decodingOfCameraNames + camerasNamesList
+    ));
 
-bot.hears('/curiosity', ctx => {
-    rover = '/curiosity'
-    ctx.reply(selectCamera + curiosityCamerasList)
-})
+bot.hears(curiosity, ctx => {
+    rover = curiosity;
+    ctx.reply(selectCamera + curiosityCamerasList);
+});
 
-bot.hears('/opportunity', ctx => {
-    rover = '/opportunity'
-    ctx.reply(selectCamera + opportunityCamerasList)    
-})
+bot.hears(opportunity, ctx => {
+    rover = opportunity;
+    ctx.reply(selectCamera + opportunityCamerasList);   
+});
 
-bot.hears('/spirit', ctx => {
-    rover = '/spirit'
-    ctx.reply(selectCamera + spiritCamerasList)    
-}) 
+bot.hears(spirit, ctx => {
+    rover = spirit;
+    ctx.reply(selectCamera + spiritCamerasList);   
+});
 
-bot.hears('/FHAZ', ctx => {
-    if (rover === '/curiosity') {
-        camera = ('/FHAZ').slice(1)
+bot.hears(constants.curiosityCameras[0], ctx => {
+    if (rover === curiosity) {
+        camera = constants.curiosityCameras[0].slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
-    } else if (rover === '/opportunity')  {
-        camera = ('/FHAZ').slice(1)
+    } else if (rover === opportunity)  {
+        camera = constants.curiosityCameras[0].slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkOpportunity) 
-    } else if (rover === '/spirit')  {
-        camera = ('/FHAZ').slice(1)
+    } else if (rover === spirit)  {
+        camera = constants.curiosityCameras[0].slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkSpirit)
     } else {
         ctx.reply(noCameraMessage)
     } 
 })
   
-bot.hears('/RHAZ', ctx => {
-    if (rover === '/curiosity') {
-        camera = ('/RHAZ').slice(1)
+bot.hears(constants.curiosityCameras[1], ctx => {
+    if (rover === curiosity) {
+        camera = constants.curiosityCameras[1].slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
-    } else if (rover === '/opportunity')  {
-        camera = ('/RHAZ').slice(1)
+    } else if (rover === opportunity)  {
+        camera = constants.curiosityCameras[1].slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkOpportunity) 
-    } else if (rover === '/spirit')  {
-        camera = ('/RHAZ').slice(1)
+    } else if (rover === spirit)  {
+        camera = constants.curiosityCameras[1].slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkSpirit)
     } else {
         ctx.reply(noCameraMessage)
@@ -77,7 +79,7 @@ bot.hears('/RHAZ', ctx => {
 })
 
 bot.hears('/MAST', ctx => {
-    if (rover === '/curiosity') {
+    if (rover === curiosity) {
         camera = ('/MAST').slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
     } else {
@@ -86,7 +88,7 @@ bot.hears('/MAST', ctx => {
 })
     
 bot.hears('/CHEMCAM', ctx => {
-    if (rover === '/curiosity') {
+    if (rover === curiosity) {
         camera = ('/CHEMCAM').slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
     } else {
@@ -95,7 +97,7 @@ bot.hears('/CHEMCAM', ctx => {
 })
 
 bot.hears('/MAHLI', ctx => {
-    if (rover === '/curiosity') {
+    if (rover === curiosity) {
         camera = ('/MAHLI').slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
     } else {
@@ -104,7 +106,7 @@ bot.hears('/MAHLI', ctx => {
 })  
         
 bot.hears('/MARDI', ctx => {
-    if (rover === '/curiosity') {
+    if (rover === curiosity) {
         camera = ('/MARDI').slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
     } else {
@@ -113,10 +115,10 @@ bot.hears('/MARDI', ctx => {
 })
 
 bot.hears('/NAVCAM', ctx => {
-    if (rover === '/curiosity') {
+    if (rover === curiosity) {
         camera = ('/NAVCAM').slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
-    } else if (rover === '/opportunity')  {
+    } else if (rover === opportunity)  {
         camera = ('/NAVCAM').slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkOpportunity) 
     } else if (rover === '/spirit')  {
@@ -128,10 +130,10 @@ bot.hears('/NAVCAM', ctx => {
 })  
 
 bot.hears('/PANCAM', ctx => {
-    if (rover === '/curiosity') {
+    if (rover === curiosity) {
         camera = ('/PANCAM').slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
-    } else if (rover === '/opportunity')  {
+    } else if (rover === opportunity)  {
         camera = ('/MINITES').slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkOpportunity) 
     } else {
@@ -140,10 +142,10 @@ bot.hears('/PANCAM', ctx => {
 })
 
 bot.hears('/MINITES', ctx => {
-    if (rover === '/curiosity') {
+    if (rover === curiosity) {
         camera = ('/MINITES').slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
-    } else if (rover === '/opportunity')  {
+    } else if (rover === opportunity)  {
         camera = ('/MINITES').slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkOpportunity) 
     } else {
