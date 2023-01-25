@@ -78,18 +78,18 @@ bot.hears(constants.curiosityCameras[1], ctx => {
     } 
 })
 
-bot.hears('/MAST', ctx => {
+bot.hears(constants.curiosityCameras[2], ctx => {
     if (rover === curiosity) {
-        camera = ('/MAST').slice(1)
+        camera = constants.curiosityCameras[2].slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
     } else {
         ctx.reply(noCameraMessage)
     }
 })
     
-bot.hears('/CHEMCAM', ctx => {
+bot.hears(constants.curiosityCameras[3], ctx => {
     if (rover === curiosity) {
-        camera = ('/CHEMCAM').slice(1)
+        camera = constants.curiosityCameras[3].slice(1)
         ctx.reply(dateMessage + constants.errorMessages.timeOfWorkCuriosity)
     } else {
         ctx.reply(noCameraMessage)
